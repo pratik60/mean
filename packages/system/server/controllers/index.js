@@ -1,8 +1,8 @@
 'use strict';
 
 var mean = require('meanio'),
-  mongoose = require('mongoose'),
-  Variable = mongoose.model('Variable');
+  mongoose = require('mongoose');
+// Variable = mongoose.model('Variable');
 
 exports.render = function(req, res) {
 
@@ -31,21 +31,20 @@ exports.render = function(req, res) {
     return req.user && req.user.roles.indexOf('admin') !== -1;
   }
 
-  var query = Variable.find({
-    name: 'permission'
+  // var query = Variable.find({
+  //   name: 'permission'
+  // });
+  // query.exec(function(err, allPermission) {
+  res.render('index', {
+    user: req.user ? {
+      name: req.user.name,
+      _id: req.user._id,
+      username: req.user.username,
+      roles: req.user.roles
+    } : {},
+    modules: modules,
+    isAdmin: isAdmin,
+    adminEnabled: isAdmin() && mean.moduleEnabled('mean-admin')
   });
-  query.exec(function(err, allPermission) {
-    res.render('index', {
-      user: req.user ? {
-        name: req.user.name,
-        _id: req.user._id,
-        username: req.user.username,
-        roles: req.user.roles,
-        permission: listPermissions(allPermission) // new permission variable setup
-      } : {},
-      modules: modules,
-      isAdmin: isAdmin,
-      adminEnabled: isAdmin() && mean.moduleEnabled('mean-admin')
-    });
-  });
+  // });
 };

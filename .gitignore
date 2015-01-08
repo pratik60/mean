@@ -69,3 +69,7 @@ modules/views/
 # --------------------
 migrations/.migrate
 migrations/db.js
+
+# vim Files
+# --------------------
+*.swp
