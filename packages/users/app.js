@@ -5,16 +5,19 @@
  */
 var mean = require('meanio'),
   Module = mean.Module;
-function MeanUserKlass () {
+
+function MeanUserKlass() {
   Module.call(this, 'users');
   this.auth = null;
 }
-MeanUserKlass.prototype = Object.create(Module.prototype,{constructor:{
-  value:MeanUserKlass,
-  configurable: false,
-  enumerable: false,
-  writable: false
-}});
+MeanUserKlass.prototype = Object.create(Module.prototype, {
+  constructor: {
+    value: MeanUserKlass,
+    configurable: false,
+    enumerable: false,
+    writable: false
+  }
+});
 
 var MeanUser = new MeanUserKlass();
 
@@ -24,7 +27,7 @@ var MeanUser = new MeanUserKlass();
  */
 MeanUser.register(function(app, database, passport) {
   // This is for backwards compatibility
-  MeanUser.auth =require('./authorization');
+  MeanUser.auth = require('./authorization');
   require('./passport')(passport);
 
   mean.register('auth', MeanUser.auth);
@@ -40,7 +43,7 @@ MeanUser.register(function(app, database, passport) {
   //     menu: 'main'
   // });
 
-  MeanUser.aggregateAsset('js', 'meanUser.js');
+  // MeanUser.aggregateAsset('js', 'meanUser.js');
   MeanUser.angularDependencies(['mean.system']);
 
   /**

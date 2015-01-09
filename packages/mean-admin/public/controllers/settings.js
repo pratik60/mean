@@ -37,7 +37,8 @@ angular.module('mean.mean-admin').controller('SettingsController', ['$scope', 'G
         var cur = resultholder,
           prop = '',
           m;
-        while (m = regex.exec(p)) {
+        while (regex.exec(p)) { //#TODO - Please check. Was equal to before
+          m = regex.exec(p);
           cur = cur[prop] || (cur[prop] = (m[2] ? [] : {}));
           prop = m[2] || m[1];
         }
@@ -50,7 +51,7 @@ angular.module('mean.mean-admin').controller('SettingsController', ['$scope', 'G
       var result = {};
       clean(data, '');
 
-      function clean(config, root) {
+      function clean(config, root) { // jshint ignore:line
         for (var index in config) {
           if (config[index] && !config[index].value && typeof(config[index]) === 'object') {
             clean(config[index], index);
