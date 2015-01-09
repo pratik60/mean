@@ -25,6 +25,6 @@ Permission.register(function(app, auth, database) {
   });
 
   Permission.aggregateAsset('css', 'permission.css');
-  Permission.angularDependencies(['checklist-model']);
+  Permission.angularDependencies(['checklist-model', 'ui.select2']);
   return Permission;
 });
