@@ -2,22 +2,7 @@
 
 var mean = require('meanio'),
   mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
-
-/**
- * Post Schema
- */
-var VariableSchema = new Schema({
-  name: {
-    type: String,
-  },
-  value: {
-    type: String,
-  },
-  data: {}
-});
-mongoose.model('Variable', VariableSchema);
-var Variable = mongoose.model('Variable');
+  Variable = mongoose.model('Variable');
 
 exports.render = function(req, res) {
 

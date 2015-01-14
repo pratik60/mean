@@ -1,23 +1,23 @@
-// 'use strict';
+'use strict';
 
-// /**
-//  * Module dependencies.
-//  */
-// var mongoose = require('mongoose'),
-//   Schema = mongoose.Schema;
+/**
+ * Module dependencies.
+ */
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
 
-// /**
-//  * Post Schema
-//  */
-// var VariableSchema = new Schema({
-//   name: {
-//     type: String,
-//   },
-//   value: {
-//     type: String,
-//   },
-//   data: {}
-// });
+/**
+ * Post Schema
+ */
+var VariableSchema = new Schema({
+  name: {
+    type: String,
+  },
+  value: {
+    type: String,
+  },
+  data: {}
+});
 
 
-// mongoose.model('Variable', VariableSchema);
+mongoose.model('Variable', VariableSchema);
