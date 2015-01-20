@@ -1,8 +1,7 @@
 'use strict';
 
 var mean = require('meanio'),
-  mongoose = require('mongoose'),
-  Variable = mongoose.model('Variable');
+  Variable = require('mongoose').model('Variable');
 
 exports.render = function(req, res) {
 

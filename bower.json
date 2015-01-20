@@ -13,7 +13,8 @@
     "web-bootstrap": "./node_modules/meanio/resources/web-bootstrap.js",
     "angular-ui-select2": "~0.0.5",
     "checklist-model": "https://github.com/vitalets/checklist-model.git",
-    "ng-clip": "latest"
-
+    "ng-clip": "latest",
+    "ng-file-upload": "~1.6.12",
+    "lodash": "~2.4.1"
   }
 }
