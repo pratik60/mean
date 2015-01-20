@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://localhost/meanng-dev',
+  db: 'mongodb://localhost/ecommercetoolbox-dev',
 };
